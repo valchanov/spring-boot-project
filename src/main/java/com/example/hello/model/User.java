@@ -1,10 +1,14 @@
 package com.example.hello.model;
 
 import io.swagger.annotations.ApiModel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
+@Getter @Setter @AllArgsConstructor
 @Table(name = "users")
 public class User {
     @Id
@@ -14,43 +18,4 @@ public class User {
     private String organisation;
     private String role;
 
-    public User() {}
-    public User(int id, String name, String organisation, String role) {
-        this.id = id;
-        this.name = name;
-        this.organisation = organisation;
-        this.role = role;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getOrganisation() {
-        return organisation;
-    }
-
-    public void setOrganisation(String organisation) {
-        this.organisation = organisation;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 }
